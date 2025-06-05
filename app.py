@@ -1,16 +1,16 @@
+import eventlet
+eventlet.monkey_patch()  # ⬅️ DOIT ÊTRE AVANT TOUT
+
 from flask import Flask, request
 from flask_socketio import SocketIO, join_room, emit
-import eventlet
 import os
-
-eventlet.monkey_patch()
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route('/')
 def home():
-    return "Serveur de quiz en ligne !"
+    return "Serveur de quiz Flask opérationnel"
 
 @socketio.on('join_quiz')
 def handle_join(data):
