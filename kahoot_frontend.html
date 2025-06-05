@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    
     <script src="https://cdn.socket.io/2.3.0/socket.io.js"></script>
+    <script src="socket-init.js"></script> 
     <script>
      const socket = io("https://kahoot-backend.onrender.com");
 
-  // Exemple : rejoindre un quiz
     socket.emit("join_quiz", {
     quiz_id: "abc123",
     player_name: "Alice"
@@ -15,7 +16,6 @@
     console.log(data.player + " a rejoint la partie !");
   });
 
-  // Recevoir une question
     socket.on("receive_question", (data) => {
     console.log("Question reçue :", data.question);
   });
