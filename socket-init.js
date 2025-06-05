@@ -1,7 +1,7 @@
 // socket-init.js
 
 // Connexion au serveur Socket.io
-const socket = io("https://kahoot-backend.onrender.com");
+const socket = io("https://tohaak.onrender.com/");
 
 // Rejoindre un quiz (à appeler dynamiquement selon le mode choisi)
 function joinQuiz(quizId, playerName) {
